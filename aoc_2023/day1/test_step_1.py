@@ -1,5 +1,7 @@
 import pytest
-from .day1 import (
+from pathlib import Path
+
+from aoc_2023.day1.day1 import (
     get_calibration_values,
     get_improved_calibration_values,
     solution_day_1_part_1,
@@ -57,3 +59,9 @@ def test__solution_day_1_part_2():
         7pqrstsixteen
     """
     assert solution_day_1_part_2(input_string) == 281
+
+
+def test__regression():
+    filename = Path(__file__).parent / "input"
+    assert solution_day_1_part_1(open(filename).read()) == 54632
+    assert solution_day_1_part_2(open(filename).read()) == 54019

@@ -1,3 +1,5 @@
+from aoc_2023.common.utils import parse_lines
+
 word_to_digit = {
     "one": "1",
     "two": "2",
@@ -29,14 +31,9 @@ def get_improved_calibration_values(decorated):
     return int(digits[0] + digits[-1])
 
 
-def _split_lines(text):
-    lines = [line.strip() for line in text.splitlines()]
-    return [line for line in lines if line]
+def solution_day_1_part_1(text: str):
+    return sum(get_calibration_values(line) for line in parse_lines(text))
 
 
-def solution_day_1_part_1(inputs: str):
-    return sum(get_calibration_values(line) for line in _split_lines(inputs))
-
-
-def solution_day_1_part_2(inputs: str):
-    return sum(get_improved_calibration_values(line) for line in _split_lines(inputs))
+def solution_day_1_part_2(text: str):
+    return sum(get_improved_calibration_values(line) for line in parse_lines(text))
