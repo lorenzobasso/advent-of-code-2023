@@ -33,9 +33,28 @@ def is_game_possible(game, total_red, total_green, total_blue):
     return True
 
 
+def get_cube_minimum(game):
+    _, sets = parse_game(game)
+
+    return (
+        max(red for red, _, _ in sets),
+        max(green for _, green, _ in sets),
+        max(blue for _, _, blue in sets),
+    )
+
+
+def get_set_power(set):
+    red, green, blue = set
+    return red * green * blue
+
+
 def solution_day_2_part_1(text: str):
     return sum(
         parse_game(game)[0]
         for game in parse_lines(text)
         if is_game_possible(game, 12, 13, 14)
     )
+
+
+def solution_day_2_part_2(text: str):
+    return sum(get_set_power(get_cube_minimum(game)) for game in parse_lines(text))
