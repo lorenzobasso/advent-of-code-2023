@@ -2,12 +2,13 @@ from pathlib import Path
 from aoc_2023.day1.day1 import solution_day_1_part_1, solution_day_1_part_2
 from aoc_2023.day2.day2 import solution_day_2_part_1, solution_day_2_part_2
 from aoc_2023.day3.day3 import solution_day_3_part_1, solution_day_3_part_2
+from aoc_2023.day4.day4 import solution_day_4_part_1, solution_day_4_part_2
 
 solution_table = {
     1: [solution_day_1_part_1, solution_day_1_part_2],
     2: [solution_day_2_part_1, solution_day_2_part_2],
     3: [solution_day_3_part_1, solution_day_3_part_2],
-    4: [],
+    4: [solution_day_4_part_1, solution_day_4_part_2],
     5: [],
 }
 
